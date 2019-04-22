@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ namespace trucoApp.BLL
                     if (!(i > 7 && i<=9))
                     {
                         string cardName = i + "_of_" + j+".png";
-                        Image cardPicture = Image.FromFile(@"..\pictures\"+cardName);
+                        Image cardPicture = Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName+@"\pictures\" +cardName);
                         Card myCard = new Card(i, j, cardPicture, false);
                         myDeck.Add(myCard);   
                     }             
