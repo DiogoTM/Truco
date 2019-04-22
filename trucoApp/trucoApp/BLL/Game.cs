@@ -8,7 +8,8 @@ namespace trucoApp.BLL
 {
     class Game
     {
-        Player player1, player2;
+        Player player1;
+        Enemy player2;
         int gameType, level;
         string scenery;
 
@@ -25,7 +26,7 @@ namespace trucoApp.BLL
         public int Level { get => level; set => level = value; }
         public string Scenery { get => scenery; set => scenery = value; }
         internal Player Player1 { get => player1; set => player1 = value; }
-        internal Player Player2 { get => player2; set => player2 = value; }
+        internal Enemy Player2 { get => player2; set => player2 = value; }
 
         public static Deck startNewGame()
         {

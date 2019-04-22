@@ -18,7 +18,7 @@ namespace trucoApp.BLL
         public Deck()
         {
             this.MyDeck = createDeck();
-            this.Vira = drawCard(); ;
+            this.Vira = drawCard();
             this.RoundWeight = 1;
         }
 
@@ -31,11 +31,11 @@ namespace trucoApp.BLL
             List<Card> myDeck = new List<Card>();
             //Card structer values go from 1 (Ace) to 13(King), kind follows the structure :1=♦,2=♠, 3=♥, 4=♣
 
-            for (int i = 1; i < 13; i++)
+            for (int i = 1; i < 14; i++)
             {
                 for (int j = 1; j <= 4; j++)
                 {
-                    if (!(i > 7 && i<=9))
+                    if (!(i > 7 && i<=10))
                     {
                         string cardName = i + "_of_" + j+".png";
                         Image cardPicture = Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName+@"\pictures\" +cardName);

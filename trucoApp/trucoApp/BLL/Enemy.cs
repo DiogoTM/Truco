@@ -14,6 +14,7 @@ namespace trucoApp.BLL
            
         }
         Random rand = new Random();
+
         public Card playturn()
         {
             int drawCard = rand.Next(MyCards.Count);

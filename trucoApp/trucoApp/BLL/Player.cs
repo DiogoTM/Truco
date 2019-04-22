@@ -19,7 +19,13 @@ namespace trucoApp.BLL
             this.myCards = new List<Card>();
             for (int i = 1; i < 4; i++)
             {
-                this.myCards.Add(myDeck.drawCard());
+                Card thisCard = myDeck.drawCard();
+                if ((thisCard.Value == myDeck.Vira.Value-1) || thisCard.Value == 11 && myDeck.Vira.Value == 7)
+                {
+                    thisCard.IsZap = true;
+                }                         
+                this.myCards.Add(thisCard);
+
             }                                                  
             this.points = 0;
             this.rounds = 0;
