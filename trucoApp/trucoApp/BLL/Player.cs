@@ -14,19 +14,9 @@ namespace trucoApp.BLL
         string name;
         bool isPlay;
 
-        public Player(Deck myDeck, string name)
+        public Player(string name)
         {
-            this.myCards = new List<Card>();
-            for (int i = 1; i < 4; i++)
-            {
-                Card thisCard = myDeck.drawCard();
-                if ((thisCard.Value == myDeck.Vira.Value-1) || thisCard.Value == 11 && myDeck.Vira.Value == 7)
-                {
-                    thisCard.IsZap = true;
-                }                         
-                this.myCards.Add(thisCard);
-
-            }                                                  
+            this.myCards = null;                                                          
             this.points = 0;
             this.rounds = 0;
             this.games = 0;
@@ -39,7 +29,7 @@ namespace trucoApp.BLL
         public int Games { get => games; set => games = value; }
         public string Name { get => name; set => name = value; }
         public bool IsPlay { get => isPlay; set => isPlay = value; }
-        internal List<Card> MyCards { get => myCards; set => myCards = value; }
+        public List<Card> MyCards { get => myCards; set => myCards = value; }
 
         public Card playCard(Card myCard)
         {                                                                             

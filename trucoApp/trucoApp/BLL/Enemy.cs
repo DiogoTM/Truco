@@ -9,19 +9,33 @@ namespace trucoApp.BLL
     class Enemy : Player
     {
 
-        public Enemy(Deck myDeck, string name) : base(myDeck, name)
+        private IEnemyStrategy myStrategy;
+
+
+        public Enemy(string name) : base(name)
         {
            
         }
+
         Random rand = new Random();
 
-        public Card playturn()
+        public void setStrategy(int difficulty)
         {
-            int drawCard = rand.Next(MyCards.Count);
-            Card card = new Card(MyCards[drawCard].Value, MyCards[drawCard].Kind, MyCards[drawCard].Picture, MyCards[drawCard].IsZap);
-            MyCards.RemoveAt(drawCard);
-            return card;                                
+            switch(difficulty)
+            {
+                case 0:
+                    MyStrategy = new dumbStrategy();
+                    break;
+                case 1:     
+                    MyStrategy = new regularStrategy();
+                    break;
+                case 2:         
+                    MyStrategy = new smartStrategy();
+                    break;                                        
+            }
+
         }
+        internal IEnemyStrategy MyStrategy { get => myStrategy; set => myStrategy = value; }                                 
 
     }
 }

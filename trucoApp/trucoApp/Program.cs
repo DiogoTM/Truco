@@ -16,7 +16,7 @@ namespace trucoApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI.Main());
+            Application.Run(new GUI.Main());   
         }
     }
 }

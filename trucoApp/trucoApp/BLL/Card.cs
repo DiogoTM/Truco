@@ -17,7 +17,15 @@ namespace trucoApp.BLL
 
         public Card(int value, int kind, Image picture, bool isZap)
         {
-            this.value = value;
+            if (value > 3)
+            {
+                this.value = value;
+            }
+            else
+            {
+                this.value = value + 12;        //Case card is an Ace, 2 or 3. They are more powerful.
+            }
+           
             this.kind = kind;
             this.picture = picture;
             this.isZap = isZap;

@@ -13,16 +13,15 @@ namespace trucoApp.BLL
     {
         private List<Card> myDeck;
         private Card vira;
-        private int roundWeight;
+       
 
         public Deck()
         {
             this.MyDeck = createDeck();
             this.Vira = drawCard();
-            this.RoundWeight = 1;
         }
 
-        public int RoundWeight { get => roundWeight; set => roundWeight = value; }
+  
         internal List<Card> MyDeck { get => myDeck; set => myDeck = value; }
         internal Card Vira { get => vira; set => vira = value; }
 
